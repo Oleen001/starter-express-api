@@ -1,7 +1,18 @@
-const express = require('express')
-const app = express()
-app.all('/', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo!')
-})
-app.listen(process.env.PORT || 3000)
+const express = require('express');
+
+const logger = require('./middleware/logger');
+
+const app = express();
+
+
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
+app.use('/api/users', require('./routes/api/users'))
+
+// Init Middleware
+app.use(logger);
+
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => console.log(`server is running on port: ${PORT}`));
