@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@cyclic.sh/dynamodb": "^0.0.35",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "moment": "^2.30.1",
     "uuid": "^9.0.1"
