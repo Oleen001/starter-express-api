@@ -1,18 +1,21 @@
 {
-  "name": "active-func",
+  "name": "starter-express-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "node index.js",
     "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyclic-software/starter-express-api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^7.1.2",
     "moment": "^2.30.1",
     "uuid": "^9.0.1"
   },
