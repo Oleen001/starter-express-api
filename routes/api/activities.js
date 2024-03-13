@@ -163,7 +163,7 @@ router.get('/activities', async (req, res) => {
 });
 
 // Route to get list of members in activity
-router.get('/activities/:id/members', async (req, res) => {
+router.get('/activities/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -171,7 +171,7 @@ router.get('/activities/:id/members', async (req, res) => {
     if (!activity) {
       return res.status(404).json({ msg: "Activity not found" });
     }
-    res.json(activity.props.members || []); // Return empty array if 'members' property is missing
+    res.json(activity.props);
   } catch (err) {
     res.status(500).json({ msg: "Error fetching members from activity", error: err.message });
   }
